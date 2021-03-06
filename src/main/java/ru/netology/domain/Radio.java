@@ -42,27 +42,30 @@ public class Radio {
         if (currentStation > maxStation) {
             return;
         }
-            if (currentStation < minStation) {
-                return;
+        if (currentStation < minStation) {
+            return;
         }
         this.currentStation = currentStation;
     }
+
     public void nextRadioStation() {
         int currentStation = this.getCurrentStation();
         if (currentStation == maxStation) {
             this.currentStation = minStation;
             return;
         }
-        this.currentStation++;
+        setCurrentStation(getCurrentStation() + 1);
     }
+
     public void prevRadioStation() {
         int currentStation = this.getCurrentStation();
         if (currentStation == minStation) {
             this.currentStation = maxStation;
             return;
         }
-        this.currentStation--;
+        setCurrentStation(getCurrentStation() - 1);
     }
+
     public void inputRadioStation(int RadioStation) {
         if (RadioStation > maxStation) {
             return;
@@ -86,42 +89,50 @@ public class Radio {
         }
         this.currentSoundVolume = currentSoundVolume;
     }
-    public void soundVolumePlus () {
+
+    public void soundVolumePlus() {
         int currentSoundVolume = this.getCurrentSoundVolume();
         if (currentSoundVolume >= maxSoundVolume) {
             return;
         }
-        this.currentSoundVolume++;
+        setCurrentSoundVolume(getCurrentSoundVolume() + 1);
     }
 
-    public int getMinSoundVolume() {
+    public int getMinSoundVolume()
+    {
         return minSoundVolume;
     }
-    public void soundVolumeMinos () {
+
+    public void soundVolumeMinus() {
         int currentSoundVolume = this.getCurrentSoundVolume();
         if (currentSoundVolume <= minSoundVolume) {
             return;
         }
-        this.currentSoundVolume--;
+        setCurrentSoundVolume(getCurrentSoundVolume() - 1);
     }
 
     public void setMinSoundVolume(int minSoundVolume) {
+
         this.minSoundVolume = minSoundVolume;
     }
 
     public int getMaxSoundVolume() {
+
         return maxSoundVolume;
     }
 
     public void setMaxSoundVolume(int maxSoundVolume) {
+
         this.maxSoundVolume = maxSoundVolume;
     }
 
     public boolean isOn() {
+
         return on;
     }
 
     public void setOn(boolean on) {
+
         this.on = on;
     }
 }
