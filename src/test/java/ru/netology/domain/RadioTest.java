@@ -92,7 +92,38 @@ public class RadioTest {
         toshiba.inputRadioStation(RadioStation);
         assertEquals(3, toshiba.getCurrentStation());
     }
-
+    @Test
+    public void shouldInputRadioStation2() {
+        int RadioStation = 10;
+        int currentStation = 2;
+        toshiba.setCurrentStation(currentStation);
+        toshiba.inputRadioStation(RadioStation);
+        assertEquals(2, toshiba.getCurrentStation());
+    }
+    @Test
+    public void shouldInputRadioStation0() {
+        int RadioStation = 10;
+        int currentStation = 0;
+        toshiba.setCurrentStation(currentStation);
+        toshiba.inputRadioStation(RadioStation);
+        assertEquals(0, toshiba.getCurrentStation());
+    }
+    @Test
+    public void shouldInputRadioStation5() {
+        int RadioStation = 7;
+        int currentStation = 5;
+        toshiba.setCurrentStation(currentStation);
+        toshiba.inputRadioStation(RadioStation);
+        assertEquals(7, toshiba.getCurrentStation());
+    }
+    @Test
+    public void shouldInputRadioStation9() {
+        int RadioStation = -3;
+        int currentStation = 9;
+        toshiba.setCurrentStation(currentStation);
+        toshiba.inputRadioStation(RadioStation);
+        assertEquals(9, toshiba.getCurrentStation());
+    }
     @Test
     public void shouldSoundVolumePlus() {
         int currentVolume = 10;
